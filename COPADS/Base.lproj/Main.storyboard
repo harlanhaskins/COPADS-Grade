@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C32e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4qN-DZ-NT4">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="cwi-Ph-pSq">
+            <objects>
+                <navigationController id="4qN-DZ-NT4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ioV-K2-Cyz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1ep-q6-jTo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hDT-vo-S95" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-687" y="234"/>
+        </scene>
+        <!--COPADS Grade-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="COPADS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABR-Yi-RJ8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ABR-Yi-RJ8" secondAttribute="bottom" id="WJD-gr-f5F"/>
+                            <constraint firstItem="ABR-Yi-RJ8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="X5J-mf-ZIq"/>
+                            <constraint firstItem="ABR-Yi-RJ8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pB7-D5-TWy"/>
+                            <constraint firstAttribute="trailing" secondItem="ABR-Yi-RJ8" secondAttribute="trailing" id="yQb-Gv-wpg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="COPADS Grade" id="bop-me-ReE">
+                        <barButtonItem key="leftBarButtonItem" title="Credentials" id="SSA-TT-48X">
+                            <connections>
+                                <segue destination="uP4-Hj-eZf" kind="popoverPresentation" popoverAnchorBarButtonItem="SSA-TT-48X" id="ewk-MH-hrG">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Tbd-oo-wiI">
+                            <connections>
+                                <action selector="fetch:" destination="BYZ-38-t0r" id="Byb-q6-ya9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="fetchButton" destination="Tbd-oo-wiI" id="OcE-6G-YAb"/>
+                        <outlet property="webView" destination="ABR-Yi-RJ8" id="eVi-fz-2R0"/>
+                    </connections>
+                </viewController>
+            </objects>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2r2-bs-fc5">
+            <objects>
+                <navigationController id="uP4-Hj-eZf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jwz-W3-H3W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tRA-KB-gwB" kind="relationship" relationship="rootViewController" id="vtv-NG-3CQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ltB-3U-Po9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="799"/>
+        </scene>
+        <!--Credentials-->
+        <scene sceneID="6xB-a1-NqP">
+            <objects>
+                <viewController id="tRA-KB-gwB" customClass="CredentialsViewController" customModule="COPADS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w9N-OL-CRA"/>
+                        <viewControllerLayoutGuide type="bottom" id="lcZ-Cv-KN3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aQA-Ks-b2f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="V2K-Gh-rjw">
+                                <rect key="frame" x="16" y="89" width="343" height="68"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gK6-Fw-RkE">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fmP-c5-eeH">
+                                        <rect key="frame" x="0.0" y="38" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V2K-Gh-rjw" firstAttribute="top" secondItem="w9N-OL-CRA" secondAttribute="bottom" constant="25" id="5Ug-72-isq"/>
+                            <constraint firstItem="lcZ-Cv-KN3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="V2K-Gh-rjw" secondAttribute="bottom" constant="25" id="RJC-dS-ygW"/>
+                            <constraint firstItem="V2K-Gh-rjw" firstAttribute="leading" secondItem="aQA-Ks-b2f" secondAttribute="leadingMargin" id="kwN-Yg-Ns6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V2K-Gh-rjw" secondAttribute="trailing" id="raB-bP-txX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Credentials" id="aVW-jM-RD0">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="SFW-SR-xcn">
+                            <connections>
+                                <action selector="dismiss" destination="tRA-KB-gwB" id="9fr-mS-kzn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="keyField" destination="fmP-c5-eeH" id="xCq-KH-y9Q"/>
+                        <outlet property="userField" destination="gK6-Fw-RkE" id="fCB-ud-eFM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N4z-8u-711" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776.79999999999995" y="798.35082458770626"/>
+        </scene>
+    </scenes>
+</document>
