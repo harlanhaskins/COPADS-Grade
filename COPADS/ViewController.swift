@@ -154,10 +154,11 @@ class ViewController: UIViewController {
         do {
             guard
                 let user = UserDefaults.standard.string(forKey: "user"),
+                let course = UserDefaults.standard.string(forKey: "course"),
                 let key = UserDefaults.standard.string(forKey: "key") else {
                 throw DecryptError.noCredentials
             }
-            let gradeURL = URL(string: "https://www.cs.rit.edu/~ark/251/grades/grades.php?user=\(user)")!
+            let gradeURL = URL(string: "https://www.cs.rit.edu/~ark/\(course)/grades/grades.php?user=\(user)")!
             let contents = try String(contentsOf: gradeURL)
             let nsContents = contents as NSString
             let regex = try NSRegularExpression(pattern: "NAME=\"Ciphertext\" VALUE=\"(\\w+)\"")
